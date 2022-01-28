@@ -32,6 +32,6 @@ export default {
 }
 .b-brick {
   border-radius: 4px;
-  background-color: #0096cc;
+  background-color: #f6f6f6;
 }
 </style>

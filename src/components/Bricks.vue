@@ -47,7 +47,7 @@ export default {
 }
 .b-replay {
   cursor: pointer;
-  border: solid 1px #cccccc;
+  border: solid 1px #9d9fa2;
   border-radius: 4px;
   padding: 8px;
   width: 64px;
@@ -64,8 +64,5 @@ export default {
   grid-template-columns: repeat(3, 1fr);
   column-gap: 12px;
   row-gap: 12px;
-}
-.brick {
-  border: solid 1px green;
 }
 </style>
