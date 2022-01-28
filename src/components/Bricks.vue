@@ -4,7 +4,7 @@
       <div class="b-replay" @click="replayClick">
         <Replay />
       </div>
-      <button class="b-button" @click="$emit('new')">NEW</button>
+      <button class="b-button" @click="newClick">NEW</button>
     </div>
     <div class="b-bricks">
       <Brick
@@ -45,6 +45,10 @@ export default {
     replayClick() {
       clearInterval(this.intervalId);
       this.initInterval();
+    },
+    newClick() {
+      clearInterval(this.intervalId);
+      this.$emit('new');
     },
     initInterval() {
       this.currentIndex = 0;
