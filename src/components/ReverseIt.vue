@@ -3,14 +3,18 @@
     <h1>Reverse it</h1>
     <p>Identify the number string and reverse it.</p>
     <div class="r-main">
-      {{ randomNumbers }}
+      <Bricks :randomNumbers="randomNumbers" />
+      <Answer :randomNumbers="randomNumbers" />
     </div>
   </div>
 </template>
 
 <script>
+import Bricks from './Bricks.vue';
+import Answer from './Answer.vue';
 export default {
   name: 'ReverseIt',
+  components: { Bricks, Answer },
   data() {
     return {
       numbersSource: [
@@ -20,7 +24,7 @@ export default {
       randomNumbers: [],
       newRandomNumbersFlag: 0,
       MIN_AMOUNT: 4,
-      MAX_AMOUNT: 7,
+      MAX_AMOUNT: 6,
     };
   },
   watch: {
@@ -43,7 +47,6 @@ export default {
 
 <style scoped lang="scss">
 .r-main {
-  border: solid 1px orange;
   min-height: 72vh;
   display: flex;
   flex-direction: column;
