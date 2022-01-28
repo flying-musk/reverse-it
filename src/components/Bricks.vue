@@ -11,7 +11,7 @@
         v-for="(brick, idx) in bricks"
         :key="idx"
         :idx="brick.idx"
-        :active="brick.active"
+        :activeFlag="brick.activeFlag"
       />
     </div>
   </div>
@@ -26,9 +26,10 @@ export default {
   props: ['randomNumbers'],
   data() {
     return {
-      bricks: [...[...Array(9).keys()].map((i) => ({ idx: i, active: false }))],
+      bricks: [...[...Array(9).keys()].map((i) => ({ idx: i, activeFlag: 0 }))],
     };
   },
+  methods: {},
 };
 </script>
 
