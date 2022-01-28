@@ -37,12 +37,13 @@ export default {
 
 <style scoped lang="scss">
 .a-outer {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 16px;
 }
 .a-title {
-  font-size: 108px;
+  font-size: 64px;
 }
 </style>

@@ -47,7 +47,6 @@ export default {
 
 <style scoped lang="scss">
 .r-main {
-  min-height: 72vh;
   display: flex;
   flex-direction: column;
   gap: 16px;
