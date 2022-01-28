@@ -3,7 +3,7 @@
     <h1>Reverse it</h1>
     <p>Identify the number string and reverse it.</p>
     <div class="r-main">
-      <Bricks :randomNumbers="randomNumbers" />
+      <Bricks :randomNumbers="randomNumbers" @new="newRandomNumbersFlag++" />
       <Answer :randomNumbers="randomNumbers" />
     </div>
   </div>

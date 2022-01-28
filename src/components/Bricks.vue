@@ -4,7 +4,7 @@
       <div class="b-replay">
         <Replay />
       </div>
-      <button class="b-button">NEW</button>
+      <button class="b-button" @click="$emit('new')">NEW</button>
     </div>
     <div class="b-bricks">
       <Brick
@@ -29,7 +29,15 @@ export default {
       bricks: [...[...Array(9).keys()].map((i) => ({ idx: i, activeFlag: 0 }))],
     };
   },
-  methods: {},
+  watch: {
+    randomNumbers: {
+      immediate: true,
+      deep: true,
+      handler() {
+        console.log('enter watch do something... setInterval...');
+      },
+    },
+  },
 };
 </script>
 

@@ -32,6 +32,14 @@ export default {
       return JSON.parse(JSON.stringify(this.randomNumbers)).reverse();
     },
   },
+  watch: {
+    randomNumbers: {
+      deep: true,
+      handler() {
+        this.answerFlag = 0;
+      },
+    },
+  },
   methods: {
     answerClick() {
       this.answerFlag++;
