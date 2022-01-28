@@ -27,14 +27,25 @@ export default {
   data() {
     return {
       bricks: [...[...Array(9).keys()].map((i) => ({ idx: i, activeFlag: 0 }))],
+      currentIndex: 0,
+      randomNumbersAmount: 0,
+      intervalId: 0,
     };
   },
   watch: {
     randomNumbers: {
       immediate: true,
       deep: true,
-      handler() {
-        console.log('enter watch do something... setInterval...');
+      handler(value) {
+        this.currentIndex = 0;
+        this.randomNumbersAmount = value.length;
+        this.intervalId = setInterval(() => {
+          this.bricks[this.randomNumbers[this.currentIndex] - 1].activeFlag++;
+          this.currentIndex++;
+          if (this.currentIndex === this.randomNumbersAmount) {
+            clearInterval(this.intervalId);
+          }
+        }, 1020);
       },
     },
   },
