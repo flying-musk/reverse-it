@@ -48,4 +48,7 @@ export default {
 .b-brick[data-active='true'] {
   background-color: #33abd6;
 }
+.b-brick:active {
+  background-color: #33abd6;
+}
 </style>
