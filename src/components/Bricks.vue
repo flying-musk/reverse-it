@@ -1,7 +1,7 @@
 <template>
   <div class="b-outer">
     <div class="b-top">
-      <div class="b-replay">
+      <div class="b-replay" @click="replayClick">
         <Replay />
       </div>
       <button class="b-button" @click="$emit('new')">NEW</button>
@@ -36,17 +36,26 @@ export default {
     randomNumbers: {
       immediate: true,
       deep: true,
-      handler(value) {
-        this.currentIndex = 0;
-        this.randomNumbersAmount = value.length;
-        this.intervalId = setInterval(() => {
-          this.bricks[this.randomNumbers[this.currentIndex] - 1].activeFlag++;
-          this.currentIndex++;
-          if (this.currentIndex === this.randomNumbersAmount) {
-            clearInterval(this.intervalId);
-          }
-        }, 1020);
+      handler() {
+        this.initInterval();
       },
+    },
+  },
+  methods: {
+    replayClick() {
+      clearInterval(this.intervalId);
+      this.initInterval();
+    },
+    initInterval() {
+      this.currentIndex = 0;
+      this.randomNumbersAmount = this.randomNumbers.length;
+      this.intervalId = setInterval(() => {
+        this.bricks[this.randomNumbers[this.currentIndex] - 1].activeFlag++;
+        this.currentIndex++;
+        if (this.currentIndex === this.randomNumbersAmount) {
+          clearInterval(this.intervalId);
+        }
+      }, 1020);
     },
   },
 };
