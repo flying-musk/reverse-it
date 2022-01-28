@@ -11,7 +11,7 @@
     <template v-if="answerFlag % 3 === 2">
       <div
         class="a-title"
-        v-for="(number, idx) in randomNumbers.reverse()"
+        v-for="(number, idx) in reversedRandomNumbers"
         :key="idx"
       >
         {{ number }}
@@ -26,6 +26,11 @@ export default {
   props: ['randomNumbers'],
   data() {
     return { answerFlag: 0 };
+  },
+  computed: {
+    reversedRandomNumbers: function () {
+      return JSON.parse(JSON.stringify(this.randomNumbers)).reverse();
+    },
   },
   methods: {
     answerClick() {
