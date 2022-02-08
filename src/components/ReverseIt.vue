@@ -33,12 +33,7 @@ export default {
       handler() {
         this.randomNumbers = this.numbersSource
           .sort(() => Math.random() - 0.5)
-          .slice(
-            0,
-            Math.floor(
-              Math.random() * (this.MAX_AMOUNT - this.MIN_AMOUNT + 1)
-            ) + this.MIN_AMOUNT
-          );
+          .slice(0, 9);
       },
     },
   },
